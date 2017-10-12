@@ -7,7 +7,7 @@ require('isomorphic-fetch');
 const apiPath = '/api';
 
 const URLS = {
-    'api-test': '/api-test'
+    'api-test/test': '/api-test/test'
 };
 let customHeader = {
     'Accept': 'application/json',
