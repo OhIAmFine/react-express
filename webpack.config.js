@@ -8,7 +8,7 @@ const extractLESS = new ExtractTextPlugin('app.test.min.css');
 
 
 module.exports = {
-	entry: './build/src/index.js',
+	entry: './build/index.js',
 	output: {
 		path: path.resolve(__dirname, './public/' + pkg.name + '/'),
 		filename: 'app.test.min.js',

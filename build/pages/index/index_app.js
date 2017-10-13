@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {fetch} from './common/api.js'
+import logo from '../../img/logo.svg';
+import '../../style/App.css';
+import {fetch} from '../../common/api.js'
 
 class App extends Component {
   constructor(props) {
