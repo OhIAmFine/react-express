@@ -9,7 +9,7 @@ import {modalUpdate} from './actions/modal';
 import Layout from './pages/layout.jsx'; //框架
 import NotFound from './pages/not_found.jsx'; //404
 
-import '../../node_modules/antd/dist/antd.less';
+import '../node_modules/antd/dist/antd.less';
 
 function loadPage(end) {
     if(end) {
@@ -27,12 +27,11 @@ function loadPage(end) {
 export default (
     <Provider store={store}>
         <Router history={history}>
-            <Route path="client" component={Layout}>
-                <IndexRoute component={NotFound} />
+            <Route path="/" component={Layout}>
                 <Route path="index" getIndexRoute={(partialNextState, callback)=>{
                     loadPage();
                     require.ensure([], function (require) {
-                        let loadComponent = require('./pages/index/index_app.jsx');
+                        let loadComponent = require('./pages/index/index_app.js');
                         loadPage(true);
                         callback(null, {
                             component: loadComponent.default
@@ -43,7 +42,7 @@ export default (
                 <Route path="form-lists" getIndexRoute={(partialNextState, callback)=>{
                     loadPage();
                     require.ensure([], function (require) {
-                        let loadComponent = require('./pages/form-lists/index.jsx');
+                        let loadComponent = require('./pages/form-lists/index.js');
                         loadPage(true);
                         callback(null, {
                             component: loadComponent.default
@@ -51,6 +50,8 @@ export default (
                     }, 'form-lists');
                 }}>
                 </Route>
+                <IndexRoute component={NotFound} />
+
             </Route>
         </Router>
     </Provider>

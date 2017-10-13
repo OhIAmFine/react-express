@@ -12,8 +12,8 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './public/' + pkg.name + '/'),
 		filename: 'app.test.min.js',
-		chunkFilename: 'chunk.[name].min.js',
-		publicPath: '/' + pkg.name + '/'
+		chunkFilename: 'chunk.[name].[chunkhash:8].min.js',
+        publicPath: '/' + pkg.name + '/'
 	},
 	module: {
 		loaders: [

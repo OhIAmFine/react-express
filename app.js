@@ -17,9 +17,20 @@ var app = express();
 
 
 
+// var ejs = require('ejs');
+
+
+// app.engine('.html', require('ejs').__express);
+// app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// app.engine('html', ejs.__express);
+
+// app.set('view engine', 'html');
+// app.engine('html', require('ejs').renderFile);
+// app.set("view engine", "ejs");
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public

@@ -1,5 +1,9 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='./react-express/app.test.min.css')
+  body
+    block content
+    div#root
+    script(src='./react-express/app.test.min.js')
